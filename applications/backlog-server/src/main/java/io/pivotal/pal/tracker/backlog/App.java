@@ -25,7 +25,6 @@ public class App {
     }
 
     @Bean
-    @HystrixCommand(fallbackMethod = "getProjectFromCache")
     ProjectClient projectClient(
         RestOperations restOperations,
         @Value("${registration.server.endpoint}") String registrationEndpoint
